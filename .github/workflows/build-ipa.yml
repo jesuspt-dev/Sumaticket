@@ -101,21 +101,30 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          APP_PATH="$(find "$PWD/build/DerivedData/Build/Products/Release-iphoneos" -maxdepth 1 -name 'Sumaticket.app' -print -quit)"
+
+          ROOT="$PWD"
+          BUILD_DIR="$ROOT/build"
+          IPA_DIR="$BUILD_DIR/ipa"
+          IPA_PATH="$BUILD_DIR/Sumaticket-iPhone.ipa"
+          SHA_PATH="$BUILD_DIR/Sumaticket-iPhone.ipa.sha256"
+
+          APP_PATH="$(find "$BUILD_DIR/DerivedData/Build/Products/Release-iphoneos" -maxdepth 1 -name 'Sumaticket.app' -print -quit)"
           test -n "$APP_PATH"
           test -f "$APP_PATH/Sumaticket"
 
-          rm -rf "$PWD/build/ipa"
-          mkdir -p "$PWD/build/ipa/Payload"
-          cp -R "$APP_PATH" "$PWD/build/ipa/Payload/Sumaticket.app"
-          xattr -cr "$PWD/build/ipa/Payload/Sumaticket.app" || true
+          rm -rf "$IPA_DIR"
+          mkdir -p "$IPA_DIR/Payload"
+          cp -R "$APP_PATH" "$IPA_DIR/Payload/Sumaticket.app"
+          xattr -cr "$IPA_DIR/Payload/Sumaticket.app" || true
 
-          cd "$PWD/build/ipa"
-          zip -qry "$PWD/build/Sumaticket-iPhone.ipa" Payload
-          cd "$PWD"
+          (
+            cd "$IPA_DIR"
+            zip -qry "$IPA_PATH" Payload
+          )
 
-          unzip -t "$PWD/build/Sumaticket-iPhone.ipa"
-          shasum -a 256 "$PWD/build/Sumaticket-iPhone.ipa" | tee "$PWD/build/Sumaticket-iPhone.ipa.sha256"
+          test -f "$IPA_PATH"
+          unzip -t "$IPA_PATH"
+          shasum -a 256 "$IPA_PATH" | tee "$SHA_PATH"
 
       - name: Upload IPA
         uses: actions/upload-artifact@v5

@@ -33,6 +33,15 @@ No existe backend, cuenta, telemetría ni claves API. El reconocimiento de texto
 - Para generar la IPA desde Windows: Git + cuenta de GitHub.
 - Para instalar: AltServer + AltStore Classic.
 
+## Subida a GitHub desde Windows
+
+`SUBIR_A_GITHUB.bat` es reejecutable. Antes de subir:
+- hace `fetch` de `origin`;
+- integra `origin/main` mediante `pull --rebase` cuando comparte historial;
+- admite un repositorio remoto inicializado por separado mediante `--allow-unrelated-histories`;
+- nunca usa `push --force`;
+- si existe un conflicto, se detiene y muestra cómo resolverlo.
+
 ## Compilación
 
 El workflow `.github/workflows/build-ipa.yml` realiza un build Release real para `iphoneos`, sin firma, genera `Sumaticket-iPhone.ipa`, valida el ZIP y publica también su SHA-256.

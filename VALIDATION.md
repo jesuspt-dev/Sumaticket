@@ -35,3 +35,10 @@ en lugar de imprimir literalmente `generic/platform=iOS`.
 
 El workflow valida por tanto la existencia de un destino iOS físico y mantiene
 `-destination 'generic/platform=iOS'` únicamente en el comando real de compilación.
+
+
+## Empaquetado IPA
+
+El workflow conserva la raíz del repositorio en `ROOT` antes de entrar en
+`build/ipa`. Así, la ruta final de `Sumaticket-iPhone.ipa` no depende del
+directorio de trabajo actual y evita rutas duplicadas como `build/ipa/build/...`.
