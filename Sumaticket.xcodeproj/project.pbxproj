@@ -1,0 +1,144 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4D756BECEDF3F4D3C88E7E85 /* SumaticketApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B233FD2DB065394DEC60147 /* SumaticketApp.swift */; };
+		07A7F69C5A21A1829D378911 /* GeneralCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C004E4165CAAB3C502103DE /* GeneralCategory.swift */; };
+		13CB9524C9E223C36F4C023F /* Receipt.swift in Sources */ = {isa = PBXBuildFile; fileRef = EE727942E48526DFE93766F7 /* Receipt.swift */; };
+		6BFD6D46A772A85DDF0DCA96 /* ReceiptScannerService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42C8C359AC340823F38FE41A /* ReceiptScannerService.swift */; };
+		6EB20FDC541A3C0AD78A5C9A /* ReceiptGrouping.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0835563551A91BF04D080E23 /* ReceiptGrouping.swift */; };
+		7B295D6C38EA9FD738D41ACF /* TrashService.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFD68002A107FB80C802113 /* TrashService.swift */; };
+		6BE2F8A9CACBDA357E9B0C0F /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B01BB81C17DCA7E27C4F29 /* Components.swift */; };
+		14445648912646D6050B9C6B /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 877B6F8F8CA2EF4ADB20D0CF /* RootView.swift */; };
+		72A76494A8F40FC78F562310 /* OverviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9A99ECD1E869D0873B9686E /* OverviewView.swift */; };
+		161AC781760CA75BF0DA8165 /* TicketListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD49EA57CEA1A43CEC03A6 /* TicketListView.swift */; };
+		484CDB645FF17A178F311CCE /* EstablishmentsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BA0C909B1357A5296C0A57B /* EstablishmentsView.swift */; };
+		8DFEBCF265FE2A8C68E79BF0 /* EstablishmentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F536D1243F03083879731443 /* EstablishmentDetailView.swift */; };
+		A44092C218A5E9F2B3560D5D /* GeneralCategoriesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E5C7B0A3D03AC0491082651 /* GeneralCategoriesView.swift */; };
+		AB4A8F0A35FAEFC12E106657 /* GeneralCategoryDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5926378251FFDC27821A56AC /* GeneralCategoryDetailView.swift */; };
+		DB2703C9F628FE9D6157FFC6 /* ReceiptDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3AE2214F0044100E730ACF /* ReceiptDetailView.swift */; };
+		E5D28ECB51B248987C1CB5C3 /* CameraPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57FE7374A2CE756C7AECD426 /* CameraPicker.swift */; };
+		0BFF63AF10BB7525009AB043 /* ScanTicketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CFC5A8181C4DA0E992FB816 /* ScanTicketView.swift */; };
+		6BA403AF58CFCEAAB9EF986F /* ReviewScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 41C2F678F8C89386DF7CFD4E /* ReviewScanView.swift */; };
+		F090878C5D687A40D2A5D6DD /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD2D78C2A969D5CBD72E06 /* SettingsView.swift */; };
+		F49E8AECB9B19B2A5463A381 /* TrashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 171E8DFE1B64C2EC85A238F0 /* TrashView.swift */; };
+		7F541BB7BBCE1C0E2C548264 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8B40A3F1CAC9ADB66B78DD5C /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0B233FD2DB065394DEC60147 /* SumaticketApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SumaticketApp.swift; sourceTree = "<group>"; };
+		3C004E4165CAAB3C502103DE /* GeneralCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCategory.swift; sourceTree = "<group>"; };
+		EE727942E48526DFE93766F7 /* Receipt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Receipt.swift; sourceTree = "<group>"; };
+		42C8C359AC340823F38FE41A /* ReceiptScannerService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptScannerService.swift; sourceTree = "<group>"; };
+		0835563551A91BF04D080E23 /* ReceiptGrouping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptGrouping.swift; sourceTree = "<group>"; };
+		EDFD68002A107FB80C802113 /* TrashService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashService.swift; sourceTree = "<group>"; };
+		A2B01BB81C17DCA7E27C4F29 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+		877B6F8F8CA2EF4ADB20D0CF /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		A9A99ECD1E869D0873B9686E /* OverviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverviewView.swift; sourceTree = "<group>"; };
+		C1BD49EA57CEA1A43CEC03A6 /* TicketListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TicketListView.swift; sourceTree = "<group>"; };
+		5BA0C909B1357A5296C0A57B /* EstablishmentsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentsView.swift; sourceTree = "<group>"; };
+		F536D1243F03083879731443 /* EstablishmentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EstablishmentDetailView.swift; sourceTree = "<group>"; };
+		8E5C7B0A3D03AC0491082651 /* GeneralCategoriesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCategoriesView.swift; sourceTree = "<group>"; };
+		5926378251FFDC27821A56AC /* GeneralCategoryDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralCategoryDetailView.swift; sourceTree = "<group>"; };
+		CE3AE2214F0044100E730ACF /* ReceiptDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceiptDetailView.swift; sourceTree = "<group>"; };
+		57FE7374A2CE756C7AECD426 /* CameraPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CameraPicker.swift; sourceTree = "<group>"; };
+		8CFC5A8181C4DA0E992FB816 /* ScanTicketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanTicketView.swift; sourceTree = "<group>"; };
+		41C2F678F8C89386DF7CFD4E /* ReviewScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewScanView.swift; sourceTree = "<group>"; };
+		96FD2D78C2A969D5CBD72E06 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		171E8DFE1B64C2EC85A238F0 /* TrashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrashView.swift; sourceTree = "<group>"; };
+		8B40A3F1CAC9ADB66B78DD5C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		38ED30322495D02C679CFD76 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		38A007151ABE87CC01A5B6E9 /* Sumaticket.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sumaticket.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7B8633C7EB6F5CB13673C25D = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6CFC827E67DCAE34C72B9CED = {isa = PBXGroup; children = (1DF401F405384E02A0BF02D3 /* Sumaticket */, 021F2B7F3E0C61452C987484 /* Products */); sourceTree = "<group>"; };
+		021F2B7F3E0C61452C987484 /* Products */ = {isa = PBXGroup; children = (38A007151ABE87CC01A5B6E9 /* Sumaticket.app */); name = Products; sourceTree = "<group>"; };
+		1DF401F405384E02A0BF02D3 /* Sumaticket */ = {isa = PBXGroup; children = (0B233FD2DB065394DEC60147, 9911C8090D10EFAB1ED672C2, D072337BD2CD1B18DAEC184E, 38DC3EC5BB18656AEB7EC09F, 8B40A3F1CAC9ADB66B78DD5C, 38ED30322495D02C679CFD76); path = Sumaticket; sourceTree = "<group>"; };
+		9911C8090D10EFAB1ED672C2 /* Models */ = {isa = PBXGroup; children = (3C004E4165CAAB3C502103DE, EE727942E48526DFE93766F7); path = Models; sourceTree = "<group>"; };
+		D072337BD2CD1B18DAEC184E /* Services */ = {isa = PBXGroup; children = (42C8C359AC340823F38FE41A, 0835563551A91BF04D080E23, EDFD68002A107FB80C802113); path = Services; sourceTree = "<group>"; };
+		38DC3EC5BB18656AEB7EC09F /* Views */ = {isa = PBXGroup; children = (A2B01BB81C17DCA7E27C4F29, 877B6F8F8CA2EF4ADB20D0CF, A9A99ECD1E869D0873B9686E, C1BD49EA57CEA1A43CEC03A6, 5BA0C909B1357A5296C0A57B, F536D1243F03083879731443, 8E5C7B0A3D03AC0491082651, 5926378251FFDC27821A56AC, CE3AE2214F0044100E730ACF, 57FE7374A2CE756C7AECD426, 8CFC5A8181C4DA0E992FB816, 41C2F678F8C89386DF7CFD4E, 96FD2D78C2A969D5CBD72E06, 171E8DFE1B64C2EC85A238F0); path = Views; sourceTree = "<group>"; };
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0E8A3AD980EC179856012B7E /* Sumaticket */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F8D9D3B88CD6FC592C2C9D18;
+			buildPhases = (E4F78730D65EE9F55E2BAC2F, 7B8633C7EB6F5CB13673C25D, C52ABA055DA4D0050382EB56);
+			buildRules = ();
+			dependencies = ();
+			name = Sumaticket;
+			productName = Sumaticket;
+			productReference = 38A007151ABE87CC01A5B6E9 /* Sumaticket.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		98F54143AB4E86B28C3AFEE0 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {BuildIndependentTargetsInParallel = 1; LastSwiftUpdateCheck = 2600; LastUpgradeCheck = 2600; TargetAttributes = {0E8A3AD980EC179856012B7E = {CreatedOnToolsVersion = 26.0; }; }; };
+			buildConfigurationList = B21C1D195CCB6F2828E1C10C;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (en, Base);
+			mainGroup = 6CFC827E67DCAE34C72B9CED;
+			productRefGroup = 021F2B7F3E0C61452C987484 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (0E8A3AD980EC179856012B7E /* Sumaticket */);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C52ABA055DA4D0050382EB56 = {isa = PBXResourcesBuildPhase; buildActionMask = 2147483647; files = (7F541BB7BBCE1C0E2C548264 /* Assets.xcassets in Resources */); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4F78730D65EE9F55E2BAC2F = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (
+			4D756BECEDF3F4D3C88E7E85 /* SumaticketApp.swift in Sources */,
+			07A7F69C5A21A1829D378911 /* GeneralCategory.swift in Sources */,
+			13CB9524C9E223C36F4C023F /* Receipt.swift in Sources */,
+			6BFD6D46A772A85DDF0DCA96 /* ReceiptScannerService.swift in Sources */,
+			6EB20FDC541A3C0AD78A5C9A /* ReceiptGrouping.swift in Sources */,
+			7B295D6C38EA9FD738D41ACF /* TrashService.swift in Sources */,
+			6BE2F8A9CACBDA357E9B0C0F /* Components.swift in Sources */,
+			14445648912646D6050B9C6B /* RootView.swift in Sources */,
+			72A76494A8F40FC78F562310 /* OverviewView.swift in Sources */,
+			161AC781760CA75BF0DA8165 /* TicketListView.swift in Sources */,
+			484CDB645FF17A178F311CCE /* EstablishmentsView.swift in Sources */,
+			8DFEBCF265FE2A8C68E79BF0 /* EstablishmentDetailView.swift in Sources */,
+			A44092C218A5E9F2B3560D5D /* GeneralCategoriesView.swift in Sources */,
+			AB4A8F0A35FAEFC12E106657 /* GeneralCategoryDetailView.swift in Sources */,
+			DB2703C9F628FE9D6157FFC6 /* ReceiptDetailView.swift in Sources */,
+			E5D28ECB51B248987C1CB5C3 /* CameraPicker.swift in Sources */,
+			0BFF63AF10BB7525009AB043 /* ScanTicketView.swift in Sources */,
+			6BA403AF58CFCEAAB9EF986F /* ReviewScanView.swift in Sources */,
+			F090878C5D687A40D2A5D6DD /* SettingsView.swift in Sources */,
+			F49E8AECB9B19B2A5463A381 /* TrashView.swift in Sources */,
+		); runOnlyForDeploymentPostprocessing = 0; };
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		5E8ACABCCBE1DB5D311988C9 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; ENABLE_STRICT_OBJC_MSGSEND = YES; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; DEBUG_INFORMATION_FORMAT = dwarf; GCC_OPTIMIZATION_LEVEL = 0; SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG; }; name = Debug; };
+		F84FD35CA8548076F2B51EDF /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ALWAYS_SEARCH_USER_PATHS = NO; CLANG_ENABLE_MODULES = YES; CLANG_ENABLE_OBJC_ARC = YES; ENABLE_STRICT_OBJC_MSGSEND = YES; GCC_C_LANGUAGE_STANDARD = gnu17; IPHONEOS_DEPLOYMENT_TARGET = 17.0; SDKROOT = iphoneos; DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym"; SWIFT_COMPILATION_MODE = wholemodule; }; name = Release; };
+		52E4B1F45A8301801ABFA155 /* Debug */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Sumaticket/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.jesuspt.sumaticket; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; SWIFT_OPTIMIZATION_LEVEL = "-Onone"; }; name = Debug; };
+		9F4924C3DF89CA99B9B1F005 /* Release */ = {isa = XCBuildConfiguration; buildSettings = {ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon; ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor; CODE_SIGN_STYLE = Automatic; CURRENT_PROJECT_VERSION = 1; GENERATE_INFOPLIST_FILE = NO; INFOPLIST_FILE = Sumaticket/Info.plist; IPHONEOS_DEPLOYMENT_TARGET = 17.0; MARKETING_VERSION = 1.0.0; PRODUCT_BUNDLE_IDENTIFIER = com.jesuspt.sumaticket; PRODUCT_NAME = "$(TARGET_NAME)"; SUPPORTED_PLATFORMS = "iphoneos iphonesimulator"; SUPPORTS_MACCATALYST = NO; SWIFT_EMIT_LOC_STRINGS = YES; SWIFT_VERSION = 5.0; TARGETED_DEVICE_FAMILY = 1; SWIFT_OPTIMIZATION_LEVEL = "-O"; }; name = Release; };
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B21C1D195CCB6F2828E1C10C = {isa = XCConfigurationList; buildConfigurations = (5E8ACABCCBE1DB5D311988C9, F84FD35CA8548076F2B51EDF); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+		F8D9D3B88CD6FC592C2C9D18 = {isa = XCConfigurationList; buildConfigurations = (52E4B1F45A8301801ABFA155, 9F4924C3DF89CA99B9B1F005); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
+/* End XCConfigurationList section */
+	};
+	rootObject = 98F54143AB4E86B28C3AFEE0 /* Project object */;
+}

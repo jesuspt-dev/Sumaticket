@@ -1,0 +1,135 @@
+name: Build Sumaticket IPA
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: macos-latest
+    timeout-minutes: 35
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Select Xcode 26
+        shell: bash
+        run: |
+          set -euo pipefail
+          candidates=(
+            "/Applications/Xcode_26.5.app"
+            "/Applications/Xcode_26.5.0.app"
+            "/Applications/Xcode_26.4.1.app"
+            "/Applications/Xcode_26.4.app"
+            "/Applications/Xcode_26.3.app"
+            "/Applications/Xcode_26.2.app"
+            "/Applications/Xcode_26.1.app"
+            "/Applications/Xcode_26.0.app"
+            "/Applications/Xcode.app"
+          )
+
+          selected=""
+          for candidate in "${candidates[@]}"; do
+            if [[ -d "$candidate" ]]; then
+              selected="$candidate"
+              break
+            fi
+          done
+
+          if [[ -z "$selected" ]]; then
+            echo "No se encontró una instalación compatible de Xcode."
+            ls -la /Applications | grep Xcode || true
+            exit 1
+          fi
+
+          echo "Seleccionado: $selected"
+          sudo xcode-select -s "$selected/Contents/Developer"
+          xcodebuild -version
+          xcrun --sdk iphoneos --show-sdk-version
+
+      - name: Check generic iOS destination
+        shell: bash
+        run: |
+          set -euo pipefail
+          xcodebuild -project Sumaticket.xcodeproj -scheme Sumaticket -showdestinations | tee destinations.txt
+          grep -q "generic/platform=iOS" destinations.txt || {
+            echo "No aparece el destino genérico de iOS."
+            exit 1
+          }
+
+      - name: Build unsigned Release app
+        shell: bash
+        run: |
+          set +e
+          set -o pipefail
+          mkdir -p build
+
+          xcodebuild \
+            -project Sumaticket.xcodeproj \
+            -scheme Sumaticket \
+            -configuration Release \
+            -sdk iphoneos \
+            -destination 'generic/platform=iOS' \
+            -derivedDataPath "$PWD/build/DerivedData" \
+            -resultBundlePath "$PWD/build/Sumaticket.xcresult" \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            DEVELOPMENT_TEAM="" \
+            clean build 2>&1 | tee "$PWD/build/xcodebuild.log"
+
+          status=${PIPESTATUS[0]}
+          set -e
+
+          if [[ $status -ne 0 ]]; then
+            echo ""
+            echo "============================================================"
+            echo " ERRORES REALES DE XCODE"
+            echo "============================================================"
+            grep -nE '(^| )error:|SwiftCompile|CompileSwift|fatal error:' "$PWD/build/xcodebuild.log" | tail -n 160 || true
+            exit "$status"
+          fi
+
+      - name: Package and validate IPA
+        shell: bash
+        run: |
+          set -euo pipefail
+          APP_PATH="$(find "$PWD/build/DerivedData/Build/Products/Release-iphoneos" -maxdepth 1 -name 'Sumaticket.app' -print -quit)"
+          test -n "$APP_PATH"
+          test -f "$APP_PATH/Sumaticket"
+
+          rm -rf "$PWD/build/ipa"
+          mkdir -p "$PWD/build/ipa/Payload"
+          cp -R "$APP_PATH" "$PWD/build/ipa/Payload/Sumaticket.app"
+          xattr -cr "$PWD/build/ipa/Payload/Sumaticket.app" || true
+
+          cd "$PWD/build/ipa"
+          zip -qry "$PWD/build/Sumaticket-iPhone.ipa" Payload
+          cd "$PWD"
+
+          unzip -t "$PWD/build/Sumaticket-iPhone.ipa"
+          shasum -a 256 "$PWD/build/Sumaticket-iPhone.ipa" | tee "$PWD/build/Sumaticket-iPhone.ipa.sha256"
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v5
+        with:
+          name: Sumaticket-iPhone
+          path: |
+            build/Sumaticket-iPhone.ipa
+            build/Sumaticket-iPhone.ipa.sha256
+          if-no-files-found: error
+          retention-days: 30
+
+      - name: Upload Xcode diagnostics
+        if: failure()
+        uses: actions/upload-artifact@v5
+        with:
+          name: xcode-diagnostics
+          path: |
+            build/xcodebuild.log
+            build/*.xcresult
+            destinations.txt
+          if-no-files-found: ignore
+          retention-days: 14
